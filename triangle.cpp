@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-    int height = 10; // You can change the height of the triangle here
+    int height = 5; // You can change the height of the triangle here
 
     for (int i = 1; i <= height; ++i) {
         for (int j = 1; j <= height - i; ++j) {
