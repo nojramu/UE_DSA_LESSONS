@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib> // Include this header to use the system function
 
 using namespace std;
 
@@ -6,6 +7,9 @@ int main() {
     const int SIZE = 10;
     int arr[SIZE];
     int searchElement, index = -1;
+
+    // Clear the terminal screen
+    system("clear");
 
     // Input 10 elements into the array
     cout << "Enter 10 elements for the array:" << endl;
