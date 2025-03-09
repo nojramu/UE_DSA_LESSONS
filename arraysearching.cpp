@@ -21,7 +21,6 @@ int main() {
     cout << "Enter the element to search for: ";
     cin >> searchElement;
 
-    // Search for the element in the array
     for (int i = 0; i < SIZE; ++i) {
         if (arr[i] == searchElement) {
             index = i;

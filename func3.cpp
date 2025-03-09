@@ -4,13 +4,14 @@ using namespace std;
 int sum(int);
 int sum(int, int);
 int sum(int, int, int);
-int sum(int, int, int, int);
 
 int main () {
     cout << sum (10) << endl;
     cout << sum (10, 5) << endl;
-    cout << sum (10, 5) << endl;
-    cout << sum (10, 5, 5, 5) << endl;
+    cout << sum (10, 5, 5) << endl;
+    cout << sum (6, 5) << endl;
+    cout << sum (7) << endl;
+    cout << sum (7+1, 2) << endl;
     //system("pause");
 }
 
@@ -24,7 +25,4 @@ int sum(int a, int b) {
 
 int sum(int a, int b, int c) {
     return a + b + c;
-}
-int sum(int a, int b, int c, int d) {
-    return a + b + c + d;
 }

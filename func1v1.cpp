@@ -9,10 +9,10 @@ int main () {
     int total, result;
     result = diff();
     total = sum();
-
+ print();
     cout << "The difference of num1 to num2 =" <<result << endl;
     cout << "The sum of num3 and num4 =" <<total << endl;
-    print();
+    
     //system("pause"); 
 }
 
