@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+
 using namespace std;
 
 class SegmentTree {
@@ -40,11 +41,16 @@ class SegmentTree {
 
     void displayConnections(int node, int start, int end) {
         int mid = (start + end) / 2;
-        if (start == end) return;  // Leaf node
-        cout << "Node " << node << " [" << start << "," << end << "] -> "
+        if (start == end) {
+            cout << "Node " << node << " [" << start << "," << end << "] (Value: " << tree[node] << ") -> Leaf" << endl;
+            return;
+        }
+        
+        cout << "Node " << node << " [" << start << "," << end << "] (Value: " << tree[node] << ") -> "
              << "Left Child " << 2 * node << " [" << start << "," << mid << "]" << endl;
-        cout << "Node " << node << " [" << start << "," << end << "] -> "
+        cout << "Node " << node << " [" << start << "," << end << "] (Value: " << tree[node] << ") -> "
              << "Right Child " << 2 * node + 1 << " [" << mid + 1 << "," << end << "]" << endl;
+        
         displayConnections(2 * node, start, mid);
         displayConnections(2 * node + 1, mid + 1, end);
     }
@@ -65,7 +71,7 @@ public:
     }
 
     void displayTreeConnections() {
-        cout << "\nSegment Tree Node Connections:" << endl;
+        cout << "\nSegment Tree Node Connections and Values:" << endl;
         displayConnections(1, 0, n - 1);
     }
 };
@@ -74,10 +80,11 @@ int main() {
     vector<int> arr = {1, 3, 5, 7, 9, 11};
     SegmentTree st(arr);
 
-    cout << "Sum of range [1, 3]: " << st.rangeQuery(1, 3) << endl;
+    st.displayTreeConnections();
+    cout << "Sum of range [3, 5]: " << st.rangeQuery(3, 5) << endl;
 
-    st.pointUpdate(1, 10);
-    cout << "After update, sum of range [1, 3]: " << st.rangeQuery(1, 3) << endl;
+    st.pointUpdate(3, 10);
+    cout << "After update, sum of range [3, 5]: " << st.rangeQuery(3, 5) << endl;
 
     st.displayTreeConnections();
 
