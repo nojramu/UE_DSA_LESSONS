@@ -7,6 +7,6 @@ string *namePtr = &name;
 int main() {
     cout << name << endl;
     cout << &name << endl;
-    cout << namePtr << endl;
+    cout << *namePtr << endl;
     cout << &namePtr << endl;
 }
